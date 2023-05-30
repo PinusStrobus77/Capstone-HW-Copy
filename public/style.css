@@ -1,0 +1,109 @@
+body{
+    background-color:black;
+    padding: 0px;
+    margin: 0px;
+    color: #ccc;
+    font-family: 'Courier New', Courier, monospace;
+ }
+ .black{
+   background-color: black;
+ }
+ .darkred{
+   background-color: #440000;
+ }
+ .red-text {
+   font-size: 80px;
+   font-family: Amatic SC;
+   font-weight: bold;
+   color: #990000;
+ }
+ .orange-text {
+   font-size: 60px;
+   font-family: Amatic SC;
+   font-weight: bold;
+   color:chocolate;
+   text-align: center;
+ }
+ .yellow-text {
+   font-size: 60px;
+   font-family: Amatic SC;
+   font-weight: bold;
+   color: goldenrod;
+   text-align: center;
+ }
+ p, li{
+    font-size: 40px;
+    font-family: Amatic SC;
+    color: gray;
+    text-align: justify;
+ }
+ .p-center{
+   text-align: center;
+ }
+ .a-red{
+   color: #cc0000;
+ }
+ .a-orange{
+   color: chocolate;
+ }
+ .a-yellow{
+  color: goldenrod;
+ }
+ .a-green{
+  color: green
+ }
+ a:hover{
+   color: white;
+   text-decoration: none;
+ }
+ .text-decoration-none{
+   text-decoration: none;
+ }
+ h1{
+    font-size: 80px;
+    font-family: Amatic SC;
+    font-weight: bold;
+    color: #990000; 
+ }
+ h2{
+   font-size: 40px;
+   font-family: Amatic SC;
+   font-weight: bold;
+   color: goldenrod;
+   text-align: center;
+ }
+ input[type=text] {
+    font-size: 40px;
+    font-family: Amatic SC;
+    color: white;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+ }
+ input[type=radio] {
+    background-color: black;
+    font-size: 33px;
+ }
+ .button{
+   background-color: #990000;
+   font-size: 40px;
+   font-family: Amatic SC;
+ }
+ .tunnel{
+ width: 60%;
+ margin: auto;
+ background-image: url(tunel.jpg);
+ background-repeat: no-repeat;
+ background-position: right top;
+ background-size: 30%;
+ background-color: black;
+ }
+ .footer{
+   background-color: #440000;
+   color: #ccc;
+   font-family: 'Courier New', Courier, monospace;
+ }
+ .card{
+background-color: #220000;
+ }
