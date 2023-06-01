@@ -16,7 +16,7 @@ const ArtsMusic = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-        <Button variant="secondary">FEATURED ATTRACTIONS</Button>{' '}
+        <a href="https://www.artworkscincinnati.org/mural/mr-dynamite/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a> <Button variant="secondary">FEATURED ATTRACTIONS <i class="bi bi-caret-right"></i></Button>{' '}
         </Carousel.Caption>
       </Carousel.Item>
 

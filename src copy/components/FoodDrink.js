@@ -15,7 +15,7 @@ const FoodDrink = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-        <Button variant="secondary">FEATURED ATTRACTIONS</Button>{' '}        
+        <a href="https://www.artworkscincinnati.org/mural/brewing-heritage-grain-to-glass/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a> <Button variant="secondary">FEATURED ATTRACTIONS  <i class="bi bi-caret-right"></i></Button>{' '}        
         </Carousel.Caption>
       </Carousel.Item>
 

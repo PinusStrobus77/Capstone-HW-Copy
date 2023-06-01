@@ -2,7 +2,6 @@ import React from 'react';
 import Carousel  from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 
-
 const Home = () => {
   return (
     <div>
@@ -10,13 +9,17 @@ const Home = () => {
 
   {/* Masthead*/}
   <header className="masthead ">
-    <div className="container-fluid px-4 px-lg-5 h-100">
+    <div className="container-fluid px-4 px-lg-5 h-100 text-center">
       <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center" id="masthead">
         <div className="col-lg-8 align-self-end">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+        <a href="https://www.artworkscincinnati.org/mural/whats-happening-downtown/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a>
         </div>
       </div>
     </div>
   </header>
+  
   {/* Portfolio*/}
   <div id="portfolio">
     <div className="container-fluid p-0">
@@ -58,15 +61,6 @@ const Home = () => {
           </a>
         </div>
         <div className="col-lg-4 col-sm-6">
-          <a className="portfolio-box" href="/sports" title="">
-           <img className="img-fluid" src="https://drive.google.com/uc?export=view&id=14GSBgAMF6AZY2iMd-hrMBYirkird01T3" alt="sports" /> 
-            <div className="portfolio-box-caption">
-              <div className="project-category text-white-50">SPORTS & GAMING:</div>
-              <div className="project-name">games, competions, recreation</div>
-            </div>
-            </a>
-        </div>
-        <div className="col-lg-4 col-sm-6">
           <a className="portfolio-box" href="/outdoors" title="">
             <img className="img-fluid" src="https://drive.google.com/uc?export=view&id=1yAM5l1O76fwtjDluHP-lNW16ky8Jtxqu" alt="outdoors" />
             <div className="portfolio-box-caption p-3">
@@ -75,6 +69,16 @@ const Home = () => {
             </div>
           </a>
         </div>
+        <div className="col-lg-4 col-sm-6">
+          <a className="portfolio-box" href="/sports" title="">
+           <img className="img-fluid" src="https://drive.google.com/uc?export=view&id=14GSBgAMF6AZY2iMd-hrMBYirkird01T3" alt="sports" /> 
+            <div className="portfolio-box-caption">
+              <div className="project-category text-white-50">SPORTS & GAMING:</div>
+              <div className="project-name">games, competions, recreation</div>
+            </div>
+            </a>
+        </div>
+        
         
       </div>
     </div>

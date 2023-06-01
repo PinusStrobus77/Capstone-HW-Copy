@@ -15,17 +15,16 @@ const FamilyFun = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-        <Button variant="secondary">FEATURED ATTRACTIONS</Button>{' '}
-          
+        <a href="https://www.artworkscincinnati.org/mural/cincinnati-toy-heritage/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a> <Button variant="secondary">FEATURED ATTRACTIONS <i class="bi bi-caret-right"></i></Button>{' '}
         </Carousel.Caption>
       </Carousel.Item>
+
       <Carousel.Item>
         <img
           className="d-block w-100"
           src="https://drive.google.com/uc?export=view&id=16CRjLZNuyOKfwJvJe1krRkOA1T3CzbSY"
           alt="Second slide"
         />
-
         <Carousel.Caption>
         <a href="https://www.visitkingsisland.com/" target="_blank" rel="noopener noreferrer"> 
         <Button variant="info">VISIT WEBSITE</Button>{' '}</a>
@@ -73,7 +72,7 @@ const FamilyFun = () => {
         <Dropdown.Item href="https://bcmuseum.org/" target="_blank">Behringer-Crawford Museum</Dropdown.Item>
         <Dropdown.Item href="https://www.cincymuseum.org/" target="_blank">Cincinnati Museum Center</Dropdown.Item>
         <Dropdown.Item href="https://www.mlb.com/reds/hall-of-fame" target="_blank">Cincinnati Reds Hall of Fame and Museum</Dropdown.Item>
-        <Dropdown.Item href="https://www.cincinnati-oh.gov/cincyparks/" target="_blank">Cincinnati Parks</Dropdown.Item>
+        <Dropdown.Item href="https://www.cincinnati-oh.gov/cincyparks/visit-a-park/" target="_blank">Cincinnati Parks</Dropdown.Item>
         <Dropdown.Item href="https://www.greatparks.org/" target="_blank">Great Parks of Hamilton County</Dropdown.Item>
         <Dropdown.Item href="https://www.cincynature.org/" target="_blank">Cincinnati Nature Center</Dropdown.Item>
         <Dropdown.Item href="https://lovelandcastle.com/" target="_blank">Loveland Castle</Dropdown.Item>

@@ -13,6 +13,7 @@ import Sports from './components/Sports';
 import Outdoors from './components/Outdoors';
 
 
+
 class App extends Component {
   render(){
 
@@ -26,7 +27,7 @@ class App extends Component {
       <Route exact path="/"  component={Home} />
       <Route  path="/about" component={About} />
       <Route  path="/contact" component={Contact} />
-    
+      <Route  path="/familyfun" component={FamilyFun} />
       <Route  path="/artsmusic" component={ArtsMusic} />
       <Route  path="/fooddrink" component={FoodDrink} />
       <Route  path="/heritagehistory" component={HeritageHistory} />

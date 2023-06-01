@@ -15,7 +15,7 @@ const Outdoors = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-        <Button variant="secondary">FEATURED ATTRACTIONS</Button>{' '}
+        <a href="https://www.artworkscincinnati.org/mural/fiona-and-bibi-at-the-cincinnati-zoo/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a> <Button variant="secondary">FEATURED ATTRACTIONS  <i class="bi bi-caret-right"></i></Button>{' '}
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -68,7 +68,7 @@ const Outdoors = () => {
 
       <Dropdown.Menu>
         <Dropdown.Item href="https://cincinnatizoo.org/" target="_blank">Cincinnati Zoo & Botanical Garden</Dropdown.Item>
-        <Dropdown.Item href="https://www.cincinnati-oh.gov/cincyparks/" target="_blank">Cincinnati Parks</Dropdown.Item>
+        <Dropdown.Item href="https://www.cincinnati-oh.gov/cincyparks/visit-a-park/" target="_blank">Cincinnati Parks</Dropdown.Item>
         <Dropdown.Item href="https://www.greatparks.org/" target="_blank">Great Parks of Hamilton County</Dropdown.Item>
         <Dropdown.Item href="https://www.cincynature.org/" target="_blank">Cincinnati Nature Center</Dropdown.Item>
         <Dropdown.Item href="https://www.aultparkac.org/" target="_blank">Ault Park</Dropdown.Item>
