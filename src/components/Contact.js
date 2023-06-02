@@ -1,0 +1,175 @@
+// import React from "react";
+import { FaArrowDown, FaArrowUp, FaLinkedin, FaLink, FaGithub, FaDiceD20 } from 'react-icons/fa';
+import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const Contact = () => {
+    // State variables using useState
+    const [suggestedAttractions, setSuggestedAttractions] = useState([]); // Stores suggested attractions
+    const [loading, setLoading] = useState(false); // Indicates if data is being loaded
+    const [selectedCategories, setSelectedCategories] = useState([]); // Stores selected attraction categories
+    const [selectedFamilyFriendly, setSelectedFamilyFriendly] = useState(null); // Stores selected family-friendly option
+    const [submitClicked, setSubmitClicked] = useState(false); // Indicates if submit button is clicked
+    // Function to handle click on category suggestion
+    const handleSuggestionClick = (category) => {
+      if (category === null) {
+        setSelectedCategories([]); // Reset selected categories
+        setSubmitClicked(false); // Reset submitClicked flag
+      } else {
+        const updatedCategories = [...selectedCategories];
+        if (updatedCategories.includes(category)) {
+          updatedCategories.splice(updatedCategories.indexOf(category), 1); // Remove category if already selected
+        } else {
+          updatedCategories.push(category); // Add category if not already selected
+        }
+        setSelectedCategories(updatedCategories);
+      }
+    };
+    // Function to handle click on family-friendly option
+    const handleTravelingWithClick = (familyFriendly) => {
+      // If the familyFriendly parameter is null, indicating a reset button click
+      if (familyFriendly === null) {
+        setSelectedFamilyFriendly(null); // Reset the selected family-friendly option to null
+        setSubmitClicked(false); // Reset the submitClicked state to false to hide the suggestions
+      } else {
+        // If a specific family-friendly option is clicked
+        setSelectedCategories([]);  // Reset the selectedCategories state to an empty array, clearing any previously selected categories
+        setSelectedFamilyFriendly(familyFriendly); // Set the selected family-friendly option based on the clicked button
+        setSubmitClicked(false); // Reset the submitClicked state to false to hide the suggestions
+      }
+    };
+    // Function to handle submit button click
+    const handleSubmit = () => {
+      setSubmitClicked(true);
+    };
+    // useEffect hook to fetch data when submitClicked changes
+    useEffect(() => {
+      if (submitClicked) {
+        setLoading(true); // Set loading flag to true
+        axios
+          .get('http://localhost:5000/attractions/') // Fetch data from the specified URL
+          .then((response) => {
+            const attractions = response.data; // Extract data from the response
+            let filteredAttractions = attractions;
+            if (selectedCategories.length > 0 || selectedFamilyFriendly !== null) {
+              filteredAttractions = attractions.filter((attraction) => {
+                const categoryMatch = selectedCategories.includes(attraction.category); // Check if attraction category is selected
+                const familyFriendlyMatch =
+                  selectedFamilyFriendly === null ||
+                  attraction.familyFriendly === selectedFamilyFriendly; // Check if attraction is family-friendly
+                return categoryMatch && familyFriendlyMatch; // Return attractions that match the selected categories and family-friendly option
+              });
+            }
+            const randomAttractions = selectRandomAttractions(filteredAttractions, 10); // Select 10 random attractions from the filtered list
+            setSuggestedAttractions(randomAttractions); // Update suggestedAttractions state with the selected attractions
+            setLoading(false); // Set loading flag to false
+          })
+          .catch((error) => {
+            console.log(error); // Log any errors that occur during the request
+            setLoading(false); // Set loading flag to false
+          });
+      }
+    }, [submitClicked]);
+    // Function to select random attractions from the given list
+    const selectRandomAttractions = (attractions, count) => {
+      const shuffled = attractions.sort(() => 0.5 - Math.random()); // Shuffle the attractions randomly
+      return shuffled.slice(0, count); // Return the specified number of attractions from the shuffled list
+    };
+    // Function to render suggested attractions
+    const renderSuggestedAttractions = () => {
+      if (submitClicked) {
+        if (loading) {
+          return <div className="">Loading...</div>; // Render loading message while data is being fetched
+        }
+        if (suggestedAttractions.length === 0) {
+          return <div className="">No attractions found for the selected categories.</div>; // Render message if no attractions match the selected categories
+        }
+        return (
+          <div>
+            {suggestedAttractions.map((attraction) => (
+              <div key={attraction._id}>
+                <h3>{attraction.name}</h3>
+                <p>{attraction.description}</p>
+                <img src={attraction.imgURL} alt="" />
+                {/* Render other attraction details here */}
+              </div>
+            ))}
+          </div>
+        );
+      }
+      return null;
+    };
+    return(
+        <div>
+{/* //section one "contact" landing page */}
+<section id="section-one">
+            <header className="container-fluid" id="contact">
+                <div className="container-fluid text-center text-black">
+                    <br />
+                    <h1 className="display-3" id="contact-header"></h1>
+                    <a href="https://www.artworkscincinnati.org/mural/reaching-new-heights/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a>
+                    <br />
+                    <a href="/contact#trip-planner">
+                        <FaArrowDown className="icons" />
+                    </a>
+                </div>
+            </header>
+        </section>
+        <br />
+
+   <section id="trip-planner" className="d-flex justify-content-center" >
+     <div className="border border-white">
+      <div>
+        <h2>Select Your Trip Date</h2>
+        <div className="justify-content-center">
+          <div className="text-center">
+            <input type="text" className="form-control mb-2 mr-sm-2" placeholder="Start Date" />
+            <input type="text" className="form-control mb-2 mr-sm-2" placeholder="End Date" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+            <h2>Traveling With</h2>
+            <div className='btn-group'>
+              <button onClick={() => handleTravelingWithClick(true)}>Family Friendly</button>
+              <button onClick={() => handleTravelingWithClick(false)}>Not Family Friendly</button>
+              <button onClick={() => handleTravelingWithClick(null)}>Reset</button> {/* Reset button for Traveling With */}
+            </div>
+          </div>
+
+          <div>
+            <h2>Select Category</h2>
+            <div className='btn-group'>
+              <button onClick={() => handleSuggestionClick('art')}>Arts</button>
+              <button onClick={() => handleSuggestionClick('food')}>Food</button>
+              <button onClick={() => handleSuggestionClick('outdoor')}>Outdoor</button>
+              <button onClick={() => handleSuggestionClick('historical')}>Historical</button>
+              <button onClick={() => handleSuggestionClick('sports')}>Sports</button>
+              <button onClick={() => handleSuggestionClick('family')}>Family Fun</button>
+              <button onClick={() => handleSuggestionClick(null)}>Reset Categories</button>
+              <button className="btn btn-primary btn-primary" onClick={handleSubmit}>Submit</button>
+            </div>
+          </div>
+    </div>
+  </section>
+  <section id="contact-form" className="container justify-content-center">
+  <div className="row"><div className="col-12">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWis1vbFlVjI-IzWU2xBNLHicrYoAbjLrwrAfEoqmSM5IFAA/viewform?embedded=true" width="100%" height="880" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+    {/*<h2 className="mb-4">Questions? Contact us Below!</h2>
+    <div className="text-center">
+      <textarea name="contact" id="contact" className="form-control mb-2" rows="10"></textarea>
+      <button className="btn btn-primary btn-light">Submit</button>
+    </div>*/}
+  </div></div>
+</section>
+      {/* Render suggested attractions */}
+      {renderSuggestedAttractions()}
+   
+        </div>
+    )
+}
+
+export default Contact

@@ -15,7 +15,7 @@ const Sports = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-        <a href="https://www.artworkscincinnati.org/mural/ezzard-charles-the-cincinnati-cobra/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a> <Button variant="secondary">FEATURED ATTRACTIONS <i class="bi bi-caret-right"></i></Button>{' '} 
+        <a href="https://www.artworkscincinnati.org/mural/ezzard-charles-the-cincinnati-cobra/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a>{' '} 
         </Carousel.Caption>
       </Carousel.Item>
 

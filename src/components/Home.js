@@ -91,7 +91,7 @@ const Home = () => {
           alt="Highlights"
         />
         <Carousel.Caption>
-        <Button variant="secondary">FEATURED ATTRACTIONS</Button>{' '}        
+        <a href="https://www.artworkscincinnati.org/mural/you-are-here/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a>{' '}        
         </Carousel.Caption>
       </Carousel.Item>
 
