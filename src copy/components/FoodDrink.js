@@ -73,6 +73,11 @@ const FoodDrink = () => {
         <Dropdown.Item href="https://brewingheritagetrail.org/" target="_blank">Brewing Heritage Trail</Dropdown.Item>
         <Dropdown.Item href="https://junglejims.com/" target="_blank">Jungle Jim's</Dropdown.Item>
         <Dropdown.Item href="https://sweetsandmeatsbbq.com/" target="_blank">Sweets & Meats BBQ</Dropdown.Item>
+        <Dropdown.Item href="https://www.sottocincinnati.com/" target="_blank">Sotto</Dropdown.Item>
+        <Dropdown.Item href="https://www.eaglerestaurant.com/" target="_blank">The Eagle</Dropdown.Item>
+        <Dropdown.Item href="https://authenticwaffle.com/" target="_blank">Taste of Belgium</Dropdown.Item>
+        <Dropdown.Item href="https://taftsbeer.com/" target="_blank">Taft's Ale House</Dropdown.Item>
+        <Dropdown.Item href="https://www.meltingpot.com/cincinnati-oh/" target="_blank">The Melting Pot</Dropdown.Item>
         <Dropdown.Item href="https://noliakitchen.com/" target="_blank">Nolia Kitchen</Dropdown.Item>
         <Dropdown.Item href="https://www.islandfrydays.com/" target="_blank">Island Frydays</Dropdown.Item>
         <Dropdown.Item href="https://www.kjseafood.com/" target="_blank">K&J Seafood Co</Dropdown.Item>

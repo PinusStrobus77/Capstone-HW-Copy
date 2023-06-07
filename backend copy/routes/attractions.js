@@ -1,9 +1,9 @@
 const router = require('express').Router();
-let Family = require('../models/art/family.model')
+let Attractions = require('../models/art/attractions.model')
 
 router.route('/').get((req, res) => {
-    Family.find()
-        .then(family => res.json(family))
+    Attractions.find()
+        .then(arts => res.json(arts))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
@@ -12,39 +12,41 @@ router.route('/add').post((req,res) => {
     const description = req.body.description
     const imgUrl = req.body.imgUrl;
     const address = req.body.address;
-    const website = req.body.website;
+    const website = req.body.website
     const category = req.body.category
+    const familyFriendly = req.body.familyFriendly
 
-    const newFamily = new Family ({
+    const newAttractions = new Attractions ({
         name,
         description,
         imgUrl,
         address,
         website,
-        category
+        category,
+        familyFriendly
     });
 
-    newFamily.save()
+    newAttractions.save()
         .then(() => res.json('Attraction added!'))
         .catch(err => res.status(400).json('Error ' + err));
 });
 
 router.route('/:id').delete((req,res) => {
-    Family.findByIdAndDelete(req.params.id)
+    Attractions.findByIdAndDelete(req.params.id)
         .then(() => res.json('Attraction deleted.'))
         .catch(err => res.status(400).json('Error: ' + err))
 })
 
 router.route('/update/:id').post((req,res) => {
-    Family.findById(req.params.id)
-    .then(family => {
-      family.name = req.body.name;
-      family.description = req.body.description;
-      family.imgUrl= req.body.imgUrl
-      family.address = req.body.address;
-      family.website = req.body.website
-      family.category = req.body.category
-      
+    Attractions.findById(req.params.id)
+    .then(attractions => {
+        attractions.name = req.body.name;
+        attractions.description = req.body.description;
+        attractions.imgUrl= req.body.imgUrl
+        attractions.address = req.body.address;
+        attractions.website = req.body.website;;
+        attractions.category = req.body.category
+        attractions.familyFriendly = req.body.familyFriendly
 
       exercise.save()
         .then(() => res.json('Attraction updated!'))

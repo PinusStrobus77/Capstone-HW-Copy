@@ -6,7 +6,8 @@ const historySchema = new mongoose.Schema({
     imgUrl:{type: String},
     address:{type: String},
     website:{type: String},
-    category:{type: String}
+    category:{type: String},
+    familyFriendly: {type: Boolean}
 });
 
 const History = mongoose.model('History', historySchema);

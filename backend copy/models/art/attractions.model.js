@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
-const artsSchema = new mongoose.Schema({
+const attractionsSchema = new mongoose.Schema({
   name: {type: String},
   description: {type: String},
   imgUrl:{type: String},
   address:{type: String},
   website:{type: String},
-  category:{type: String}
+  category:{type: String},
+  familyFriendly: {type: Boolean}
   // Add more fields as needed
 });
 
-const Arts = mongoose.model('Arts', artsSchema);
+const Attractions = mongoose.model('Attractions', attractionsSchema );
 
-module.exports = Arts
+module.exports = Attractions

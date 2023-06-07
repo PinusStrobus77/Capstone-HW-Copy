@@ -35,7 +35,7 @@ const FunFact = () => {
   
   
   return (
-  <div>
+  <div className="container-fluid justify-content">
     <Button variant="primary" onClick={handleShow}>
       <FaDiceD20 />
     </Button>

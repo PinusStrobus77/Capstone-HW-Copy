@@ -50,6 +50,7 @@ const Contact = () => {
         setLoading(true); // Set loading flag to true
         axios
           .get('http://localhost:5000/attractions/') // Fetch data from the specified URL
+         // Fetch data from the specified URL
           .then((response) => {
             const attractions = response.data; // Extract data from the response
             let filteredAttractions = attractions;
@@ -87,12 +88,15 @@ const Contact = () => {
           return <div className="">No attractions found for the selected categories.</div>; // Render message if no attractions match the selected categories
         }
         return (
-          <div>
+          <div className='row'>
             {suggestedAttractions.map((attraction) => (
-              <div key={attraction._id}>
-                <h3>{attraction.name}</h3>
-                <p>{attraction.description}</p>
-                <img src={attraction.imgURL} alt="" />
+              <div className="col-md-4 mb-4" key={attraction._id}>
+              <img src={attraction.imgUrl} className="card-img-top" alt="" />
+              <div className="card-body">
+                <h5 className="card-title">{attraction.name}</h5>
+                <p className="card-text">{attraction.description}</p>
+                <p className="card-text">{attraction.website}</p>
+                </div>
                 {/* Render other attraction details here */}
               </div>
             ))}
@@ -109,7 +113,7 @@ const Contact = () => {
                 <div className="container-fluid text-center text-black">
                     <br />
                     <h1 className="display-3" id="contact-header"></h1>
-                    <a href="https://www.artworkscincinnati.org/mural/reaching-new-heights/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i class="bi bi-info-lg"></i></Button></a>
+                    <a href="https://www.artworkscincinnati.org/mural/reaching-new-heights/" target="_blank" rel="noopener noreferrer"><Button variant="info"><i className="bi bi-info-lg"></i></Button></a>
                     <br />
                     <a href="/contact#trip-planner">
                         <FaArrowDown className="icons" />
@@ -132,32 +136,37 @@ const Contact = () => {
       </div>
 
       <div>
-            <h2>Traveling With</h2>
-            <div className='btn-group'>
-              <button onClick={() => handleTravelingWithClick(true)}>Family Friendly</button>
-              <button onClick={() => handleTravelingWithClick(false)}>Not Family Friendly</button>
-              <button onClick={() => handleTravelingWithClick(null)}>Reset</button> {/* Reset button for Traveling With */}
-            </div>
-          </div>
+  <h2>Traveling With</h2>
+  <div className="btn-group">
+    <button className="btn btn-primary" onClick={() => handleTravelingWithClick(true)}>Family Friendly</button>
+    <button className="btn btn-primary" onClick={() => handleTravelingWithClick(false)}>Not Family Friendly</button>
+    <button className="btn btn-secondary" onClick={() => handleTravelingWithClick(null)}>Reset</button> {/* Reset button for Traveling With */}
+  </div>
+</div>
 
           <div>
-            <h2>Select Category</h2>
-            <div className='btn-group'>
-              <button onClick={() => handleSuggestionClick('art')}>Arts</button>
-              <button onClick={() => handleSuggestionClick('food')}>Food</button>
-              <button onClick={() => handleSuggestionClick('outdoor')}>Outdoor</button>
-              <button onClick={() => handleSuggestionClick('historical')}>Historical</button>
-              <button onClick={() => handleSuggestionClick('sports')}>Sports</button>
-              <button onClick={() => handleSuggestionClick('family')}>Family Fun</button>
-              <button onClick={() => handleSuggestionClick(null)}>Reset Categories</button>
-              <button className="btn btn-primary btn-primary" onClick={handleSubmit}>Submit</button>
-            </div>
-          </div>
+  <h2>Select Category</h2>
+  <div className="btn-group">
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('arts')}>Arts</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('food')}>Food</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('outdoor')}>Outdoor</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('historical')}>Historical</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('sports')}>Sports</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('family fun')}>Family Fun</button>
+    <button className="btn btn-secondary" onClick={() => handleSuggestionClick(null)}>Reset Categories</button>
+    <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+  </div>
+</div>
     </div>
-  </section>
+  </section>      
+  {/* Render suggested attractions */}
+  <div className='row'>
+    {renderSuggestedAttractions()}
+ </div> 
   <section id="contact-form" className="container justify-content-center">
   <div className="row"><div className="col-12">
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWis1vbFlVjI-IzWU2xBNLHicrYoAbjLrwrAfEoqmSM5IFAA/viewform?embedded=true" width="100%" height="880" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">Loading…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWis1vbFlVjI-IzWU2xBNLHicrYoAbjLrwrAfEoqmSM5IFAA/viewform?embedded=true" width="100%" height={880} frameBorder={0} marginHeight={0} marginWidth={0} scrolling="no">Loading…</iframe>
+
     {/*<h2 className="mb-4">Questions? Contact us Below!</h2>
     <div className="text-center">
       <textarea name="contact" id="contact" className="form-control mb-2" rows="10"></textarea>
@@ -165,8 +174,7 @@ const Contact = () => {
     </div>*/}
   </div></div>
 </section>
-      {/* Render suggested attractions */}
-      {renderSuggestedAttractions()}
+
    
         </div>
     )
