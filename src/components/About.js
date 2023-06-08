@@ -87,18 +87,18 @@ return (
                     </div></div>
                     <div className="col-lg-2">
                     <div className="card h-100" id="card-inside">
-                        <img className="card-img-top img-fluid" src="/" alt="Robert Head" />
+                        <img className="card-img-top img-fluid" src="https://drive.google.com/uc?export=view&id=1V_w5DundVyb5xoqM5ZSbXV7PVbPSVtaj" alt="Robert Head" />
                         <div className="card-body">
                             <h5 className="card-title">Robert Head</h5>
                             <br />
                             <div className="container" id="social">
-                                <a href="/">
+                                <a href="https://www.linkedin.com/in/robert-head-901bb5260/">
                                     <FaLinkedin className="icons" />
                                 </a>
                                 <a href="https://github.com/PinusStrobus77" target="_blank">
                                     <FaGithub className="icons" />
                                 </a>
-                                <a href="/">
+                                <a href="https://pinusstrobus77.github.io/Portfolio/">
                                     <FaLink className="icons" />
                                 </a>
                             </div>

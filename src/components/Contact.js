@@ -88,19 +88,20 @@ const Contact = () => {
           return <div className="">No attractions found for the selected categories.</div>; // Render message if no attractions match the selected categories
         }
         return (
+          <div className="container">
           <div className='row'>
             {suggestedAttractions.map((attraction) => (
-              <div className="col-md-4 mb-4" key={attraction._id}>
-              <img src={attraction.imgUrl} className="card-img-top" alt="" />
+              <div className="col-md-4 col-sm-12 mb-4" key={attraction._id}>
+              <img src={attraction.imgUrl} className="card-img-top img-fluid" alt="" />
               <div className="card-body">
                 <h5 className="card-title">{attraction.name}</h5>
                 <p className="card-text">{attraction.description}</p>
-                <p className="card-text">{attraction.website}</p>
+                <p><a href={attraction.website}>Their Website</a></p>
                 </div>
                 {/* Render other attraction details here */}
               </div>
             ))}
-          </div>
+          </div></div>
         );
       }
       return null;
@@ -123,9 +124,10 @@ const Contact = () => {
         </section>
         <br />
 
-   <section id="trip-planner" className="d-flex justify-content-center" >
-     <div className="border border-white">
-      <div>
+   <section id="trip-planner"> 
+   <div className="container justify-content-center" >
+     <div className="row"><div className="col-lg-3"></div>
+      <div className='col-lg-6 border border-white'>
         <h2>Select Your Trip Date</h2>
         <div className="justify-content-center">
           <div className="text-center">
@@ -133,18 +135,12 @@ const Contact = () => {
             <input type="text" className="form-control mb-2 mr-sm-2" placeholder="End Date" />
           </div>
         </div>
-      </div>
-
-      <div>
   <h2>Traveling With</h2>
-  <div className="btn-group">
+  <div className="btn-group mb-2 mr-sm-2">
     <button className="btn btn-primary" onClick={() => handleTravelingWithClick(true)}>Family Friendly</button>
     <button className="btn btn-primary" onClick={() => handleTravelingWithClick(false)}>Not Family Friendly</button>
     <button className="btn btn-secondary" onClick={() => handleTravelingWithClick(null)}>Reset</button> {/* Reset button for Traveling With */}
   </div>
-</div>
-
-          <div>
   <h2>Select Category</h2>
   <div className="btn-group">
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('arts')}>Arts</button>
@@ -157,7 +153,7 @@ const Contact = () => {
     <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
   </div>
 </div>
-    </div>
+    </div></div>
   </section>      
   {/* Render suggested attractions */}
   <div className='row'>
@@ -166,12 +162,6 @@ const Contact = () => {
   <section id="contact-form" className="container justify-content-center">
   <div className="row"><div className="col-12">
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWis1vbFlVjI-IzWU2xBNLHicrYoAbjLrwrAfEoqmSM5IFAA/viewform?embedded=true" width="100%" height={880} frameBorder={0} marginHeight={0} marginWidth={0} scrolling="no">Loading…</iframe>
-
-    {/*<h2 className="mb-4">Questions? Contact us Below!</h2>
-    <div className="text-center">
-      <textarea name="contact" id="contact" className="form-control mb-2" rows="10"></textarea>
-      <button className="btn btn-primary btn-light">Submit</button>
-    </div>*/}
   </div></div>
 </section>
 
