@@ -125,7 +125,7 @@ const Contact = () => {
         <br />
 
    <section id="trip-planner"> 
-   <div className="container justify-content-center" >
+   <div className="container justify-content-center flex-wrap" >
      <div className="row"><div className="col-lg-3"></div>
       <div className='col-lg-6 border border-white'>
         <h2>Select Your Trip Date</h2>
@@ -136,13 +136,13 @@ const Contact = () => {
           </div>
         </div>
   <h2>Traveling With</h2>
-  <div className="btn-group mb-2 mr-sm-2">
+  <div className=" btn-group-lg">
     <button className="btn btn-primary" onClick={() => handleTravelingWithClick(true)}>Family Friendly</button>
     <button className="btn btn-primary" onClick={() => handleTravelingWithClick(false)}>Not Family Friendly</button>
     <button className="btn btn-secondary" onClick={() => handleTravelingWithClick(null)}>Reset</button> {/* Reset button for Traveling With */}
   </div>
   <h2>Select Category</h2>
-  <div className="btn-group">
+  <div className=" btn-group-lg">
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('arts')}>Arts</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('food')}>Food</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('outdoor')}>Outdoor</button>
@@ -150,8 +150,10 @@ const Contact = () => {
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('sports')}>Sports</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('family fun')}>Family Fun</button>
     <button className="btn btn-secondary" onClick={() => handleSuggestionClick(null)}>Reset Categories</button>
-    <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
+    
   </div>
+  <br/>
+  <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
 </div>
     </div></div>
   </section>      

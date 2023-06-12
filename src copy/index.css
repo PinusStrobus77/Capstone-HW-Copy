@@ -322,6 +322,13 @@ a>code {
   border-color: white;
 }
 
+#card-top{
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+
 #social {
   list-style: none;
   text-decoration: none;

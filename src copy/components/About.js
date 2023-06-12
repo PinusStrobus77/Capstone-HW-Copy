@@ -23,7 +23,7 @@ return (
 
             {/* section two about Cincinnati */}
         <section id="section-two">
-        <div className="container-fluid text-center">
+        <div className="container container-fluid text-center">
                 <a href="/about#section-one">
                     <FaArrowUp className="icons" />
                     </a>
@@ -45,11 +45,12 @@ return (
                         <FaArrowUp className="icons" />
                     </a>
                     <h2 className="team-header">Capstone Team</h2>
-                    <br /></div></div><div className="row">
+                    <br /></div></div>
+                    <div className="row">
                     <div className="col-lg-3"></div>
                     <div className="col-lg-2">
                     <div className="card h-100" id="card-inside">
-                        <img className="card-img-top h-150" src="https://drive.google.com/uc?export=view&id=1yiMe4SE_qay6ZMM0NINVa2OAFqp8HjpQ" alt="Eliane Bettocchi" />
+                        <img className="card-img-top" id="card-top" src="https://drive.google.com/uc?export=view&id=1yiMe4SE_qay6ZMM0NINVa2OAFqp8HjpQ" alt="Eliane Bettocchi" />
                         <div className="card-body">
                             <h5 className="card-title">Eliane Bettocchi</h5>
                             <br />
@@ -68,7 +69,7 @@ return (
                     </div></div>
                     <div className="col-lg-2">
                     <div className="card h-100" id="card-inside">
-                        <img className="card-img-top h-200" src="https://drive.google.com/uc?export=view&id=1WObYakmif0wZOnsc240I1dZ1ojJHXtJ5" alt="Stephanie Cueto" />
+                        <img className="card-img-top" id="card-top" src="https://drive.google.com/uc?export=view&id=1WObYakmif0wZOnsc240I1dZ1ojJHXtJ5" alt="Stephanie Cueto" />
                         <div className="card-body">
                             <h5 className="card-title">Stephanie Cueto</h5>
                             <br />
@@ -87,7 +88,7 @@ return (
                     </div></div>
                     <div className="col-lg-2">
                     <div className="card h-100" id="card-inside">
-                        <img className="card-img-top img-fluid" src="https://drive.google.com/uc?export=view&id=1V_w5DundVyb5xoqM5ZSbXV7PVbPSVtaj" alt="Robert Head" />
+                        <img className="card-img-top" id="card-top" src="https://drive.google.com/uc?export=view&id=1V_w5DundVyb5xoqM5ZSbXV7PVbPSVtaj" alt="Robert Head" />
                         <div className="card-body">
                             <h5 className="card-title">Robert Head</h5>
                             <br />
