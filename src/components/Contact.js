@@ -146,7 +146,7 @@ const Contact = () => {
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('arts')}>Arts</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('food')}>Food</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('outdoor')}>Outdoor</button>
-    <button className="btn btn-primary" onClick={() => handleSuggestionClick('historical')}>Historical</button>
+    <button className="btn btn-primary" onClick={() => handleSuggestionClick('heritage and history')}>Historical</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('sports')}>Sports</button>
     <button className="btn btn-primary" onClick={() => handleSuggestionClick('family fun')}>Family Fun</button>
     <button className="btn btn-secondary" onClick={() => handleSuggestionClick(null)}>Reset Categories</button>
